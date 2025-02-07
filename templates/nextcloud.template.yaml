@@ -1,0 +1,20 @@
+type: 1
+title: Nextcloud AIO
+name: nextcloud-aio
+description: Nextcloud All-in-One container
+logo: https://upload.wikimedia.org/wikipedia/commons/6/60/Nextcloud_Logo.svg
+image: nextcloud/all-in-one:latest
+categories:
+- Cloud
+platform: linux
+restart_policy: always
+ports:
+- 80:80/tcp
+- 8080:8080/tcp
+- 8443:8443/tcp
+network_mode: bridge
+volumes:
+- container: "/mnt/docker-aio-config"
+  bind: "nextcloud_aio_mastercontainer"
+- container: "/var/run/docker.sock"
+  bind: "/var/run/docker.sock"
