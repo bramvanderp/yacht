@@ -12,8 +12,10 @@ ports:
 - 9091:9091/tcp
 network_mode: bridge
 volumes:
-- '/mnt/wdc-500gb/:/data'
-- '/home/bram/.transmission/:/config'
+- container: "/data"
+  bind: "/mnt/wdc-500gb"
+- container: "/config"
+  bind: "/home/bram/.transmission"
 cap_add:
 - NET_ADMIN
 env:
