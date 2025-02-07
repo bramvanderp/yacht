@@ -9,7 +9,7 @@ categories:
 platform: linux
 restart_policy: unless-stopped
 ports:
-- 9091:9091
+- 9091:9091/tcp
 network_mode: bridge
 volumes:
 - '/mnt/wdc-500gb/:/data'
