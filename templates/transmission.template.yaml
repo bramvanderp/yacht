@@ -19,20 +19,48 @@ volumes:
 cap_add:
 - NET_ADMIN
 env:
-- PUID=1000
-- PGID=1000
-- GITHUB_CONFIG_SOURCE_REPO=bramvanderp/vpn-configs-contrib
-- OPENVPN_PROVIDER=PROTONVPN
-- OPENVPN_CONFIG=jp.protonvpn.udp
-- OPENVPN_USERNAME=!openvpn_username
-- OPENVPN_PASSWORD=!openvpn_password
-- LOCAL_NETWORK=192.168.0.0/16
-- DISABLE_PORT_FORWARDER=false
-- DISABLE_PORT_UPDATER=true
-- OPENVPN_OPTS=--inactive 3600 --ping 10 --ping-exit 60
-- TRANSMISSION_RPC_USERNAME=!transmission_username
-- TRANSMISSION_RPC_PASSWORD=!transmission_password
-- TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true
+- name: PUID
+  label: PUID
+  default: '1000'
+- name: PGID
+  label: PGID
+  default: '1000'
+- name: GITHUB_CONFIG_SOURCE_REPO 
+  label: GITHUB_CONFIG_SOURCE_REPO
+  default: 'bramvanderp/vpn-configs-contrib'
+- name: OPENVPN_PROVIDER
+  label: OPENVPN_PROVIDER
+  default: 'PROTONVPN'
+- name: OPENVPN_CONFIG
+  label: OPENVPN_CONFIG
+  default: 'jp.protonvpn.udp'
+- name: OPENVPN_USERNAME
+  label: OPENVPN_USERNAME
+  default: '!openvpn_username'
+- name: OPENVPN_PASSWORD
+  label: OPENVPN_PASSWORD
+  default: '!openvpn_password'
+- name: LOCAL_NETWORK
+  label: LOCAL_NETWORK
+  default: '192.168.0.0/16'
+- name: DISABLE_PORT_FORWARDER
+  label: DISABLE_PORT_FORWARDER
+  default: 'false'
+- name: DISABLE_PORT_UPDATER
+  label: DISABLE_PORT_UPDATER
+  default: 'true'
+- name: OPENVPN_OPTS
+  label: OPENVPN_OPTS
+  default: '--inactive 3600 --ping 10 --ping-exit 60'
+- name: TRANSMISSION_RPC_USERNAME
+  label: TRANSMISSION_RPC_USERNAME
+  default: '!transmission_username'
+- name: TRANSMISSION_RPC_PASSWORD
+  label: TRANSMISSION_RPC_PASSWORD
+  default: '!transmission_password'
+- name: TRANSMISSION_RPC_AUTHENTICATION_REQUIRED
+  label: TRANSMISSION_RPC_AUTHENTICATION_REQUIRED
+  default: 'true'
 dns:
 - 127.0.0.1
 - 9.9.9.9
