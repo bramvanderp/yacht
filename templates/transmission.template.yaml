@@ -2,7 +2,7 @@ type: 1
 title: Transmission (with OpenVPN)
 name: transmission
 description: Torrent client + OpenVPN
-logo: https://commons.wikimedia.org/wiki/File:Transmission_Faenza.svg
+logo: https://upload.wikimedia.org/wikipedia/commons/8/84/Transmission_Faenza.svg
 image: haugene/transmission-openvpn
 categories:
 - Torrent
