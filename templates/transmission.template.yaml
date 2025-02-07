@@ -17,7 +17,7 @@ volumes:
 cap_add:
   - NET_ADMIN
 env:
- - PUID=1000
+  - PUID=1000
   - PGID=1000
   - GITHUB_CONFIG_SOURCE_REPO=bramvanderp/vpn-configs-contrib
   - OPENVPN_PROVIDER=PROTONVPN
