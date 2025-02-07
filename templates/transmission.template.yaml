@@ -1,0 +1,38 @@
+version: "1"
+templates:
+  - name: "Transmission"
+    description: "Torrent client + OpenVPN"
+    categories: 
+      - "Web"
+    logo: "https://commons.wikimedia.org/wiki/File:Transmission_Faenza.svg"
+    platform: "linux/amd64"
+    restart_policy: "unless-stopped"
+    services:
+      app:
+        image: haugene/transmission-openvpn
+        container_name: transmission
+        ports:
+          - 9091:9091
+        volumes:
+          - '/mnt/wdc-500gb/:/data'
+          - '/home/bram/.transmission/:/config'
+        environment:
+          - PUID=1000
+          - PGID=1000
+          - GITHUB_CONFIG_SOURCE_REPO=bramvanderp/vpn-configs-contrib
+          - OPENVPN_PROVIDER=PROTONVPN
+          - OPENVPN_CONFIG=jp.protonvpn.udp
+          - OPENVPN_USERNAME=!openvpn_username
+          - OPENVPN_PASSWORD=!openvpn_password
+          - LOCAL_NETWORK=192.168.0.0/16
+          - DISABLE_PORT_FORWARDER=false
+          - DISABLE_PORT_UPDATER=true
+          - OPENVPN_OPTS=--inactive 3600 --ping 10 --ping-exit 60
+          - TRANSMISSION_RPC_USERNAME=!transmission_username
+          - TRANSMISSION_RPC_PASSWORD=!transmission_password
+          - TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true
+        cap_add:
+          - NET_ADMIN
+        dns:
+          - 127.0.0.1
+          - 9.9.9.9
