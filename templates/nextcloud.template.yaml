@@ -1,6 +1,6 @@
 type: 1
 title: Nextcloud AIO
-name: nextcloud-aio
+name: nextcloud-aio-mastercontainer
 description: Nextcloud All-in-One container
 logo: https://upload.wikimedia.org/wikipedia/commons/6/60/Nextcloud_Logo.svg
 image: nextcloud/all-in-one:latest
@@ -13,6 +13,24 @@ ports:
 - 8080:8080/tcp
 - 8443:8443/tcp
 network_mode: bridge
+env:
+  - name: NEXTCLOUD_AIO_ENABLE
+    value: "true"
+  # Uncomment and modify if needed for your use case
+  # - name: AIO_DISABLE_BACKUP_SECTION
+  #   value: "false"
+  # - name: NEXTCLOUD_DATADIR
+  #   value: "/mnt/ncdata"
+  # - name: NEXTCLOUD_UPLOAD_LIMIT
+  #   value: "16G"
+  # - name: NEXTCLOUD_MEMORY_LIMIT
+  #   value: "512M"
+  # - name: NEXTCLOUD_MAX_TIME
+  #   value: "3600"
+  # - name: NEXTCLOUD_STARTUP_APPS
+  #   value: "deck, twofactor_totp, tasks, calendar, contacts, notes"
+  # - name: NEXTCLOUD_ADDITIONAL_PHP_EXTENSIONS
+  #   value: "imagick"
 volumes:
 - container: "/mnt/docker-aio-config"
   bind: "nextcloud_aio_mastercontainer"
