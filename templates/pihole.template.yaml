@@ -11,10 +11,13 @@ restart_policy: unless-stopped
 network_mode: host
 env:
   - name: TZ
+    label: Timezone
     default: Europe/Amsterdam
   - name: WEBPASSWORD
+    label: Web Password
     default: '!pihole_webpassword'
   - name: INTERFACE
+    label: Network interface
     default: enp0s25
 volumes:
   - container: /etc/pihole
