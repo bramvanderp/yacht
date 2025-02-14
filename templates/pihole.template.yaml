@@ -1,0 +1,28 @@
+type: 1
+title: Pi-hole
+name: pihole
+description: Pi-hole Network-wide Ad Blocking
+logo: https://pi-hole.net/wp-content/uploads/2016/12/Vortex-R.png
+image: pihole/pihole:latest
+categories:
+- Network
+platform: linux
+restart_policy: unless-stopped
+network_mode: host
+env:
+  - name: TZ
+    default: Europe/Amsterdam
+  - name: WEBPASSWORD
+    default: !pihole_webpassword
+  - name: INTERFACE
+    default: enp0s25
+volumes:
+  - container: /etc/pihole
+    bind: ./etc-pihole
+  - container: /etc/dnsmasq.d
+    bind: ./etc-dnsmasq.d
+cap_add:
+  - NET_ADMIN
+dns:
+  - 8.8.8.8
+  - 1.1.1.1
