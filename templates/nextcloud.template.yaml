@@ -15,22 +15,22 @@ ports:
 network_mode: bridge
 env:
   - name: NEXTCLOUD_AIO_ENABLE
-    value: "true"
+    default: "true"
   # Uncomment and modify if needed for your use case
   # - name: AIO_DISABLE_BACKUP_SECTION
-  #   value: "false"
+  #   default: "false"
   # - name: NEXTCLOUD_DATADIR
-  #   value: "/mnt/ncdata"
+  #   default: "/mnt/ncdata"
   # - name: NEXTCLOUD_UPLOAD_LIMIT
-  #   value: "16G"
+  #   default: "16G"
   # - name: NEXTCLOUD_MEMORY_LIMIT
-  #   value: "512M"
+  #   default: "512M"
   # - name: NEXTCLOUD_MAX_TIME
-  #   value: "3600"
+  #   default: "3600"
   # - name: NEXTCLOUD_STARTUP_APPS
-  #   value: "deck, twofactor_totp, tasks, calendar, contacts, notes"
+  #   default: "deck, twofactor_totp, tasks, calendar, contacts, notes"
   # - name: NEXTCLOUD_ADDITIONAL_PHP_EXTENSIONS
-  #   value: "imagick"
+  #   default: "imagick"
 volumes:
 - container: "/mnt/docker-aio-config"
   bind: "nextcloud_aio_mastercontainer"
