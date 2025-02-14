@@ -13,7 +13,7 @@ env:
   - name: TZ
     default: Europe/Amsterdam
   - name: WEBPASSWORD
-    default: !pihole_webpassword
+    default: '!pihole_webpassword'
   - name: INTERFACE
     default: enp0s25
 volumes:
