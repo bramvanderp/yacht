@@ -1,0 +1,42 @@
+type: 1
+title: Jellyfin
+name: jellyfin
+description: Media server for streaming movies, TV shows, and music
+logo: https://raw.githubusercontent.com/jellyfin/jellyfin-ux/master/branding/SVG/icon-transparent.svg
+image: jellyfin/jellyfin:latest
+categories:
+- Media
+platform: linux
+restart_policy: unless-stopped
+ports:
+- 8096:8096/tcp
+network_mode: bridge
+volumes:
+- container: "/config"
+  bind: "/home/bram/.jellyfin"
+- container: "/cache"
+  bind: "/home/bram/.jellyfin/cache"
+- container: "/media"
+  bind: "/mnt/wdc-500gb"
+env:
+- name: PUID
+  label: PUID
+  default: '1000'
+- name: PGID
+  label: PGID
+  default: '1000'
+- name: TZ
+  label: Timezone
+  default: 'Europe/Amsterdam'
+- name: JELLYFIN_PublishedServerUrl
+  label: Published Server URL
+  default: ''
+- name: JELLYFIN_FFmpegPath
+  label: FFmpeg Path
+  default: ''
+- name: NVIDIA_VISIBLE_DEVICES
+  label: NVIDIA Visible Devices
+  default: 'all'
+- name: NVIDIA_DRIVER_CAPABILITIES
+  label: NVIDIA Driver Capabilities
+  default: 'all'
