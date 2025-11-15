@@ -22,9 +22,3 @@ env:
 - name: TZ
   label: Timezone
   default: 'Europe/Amsterdam'
-- name: JELLYFIN_PublishedServerUrl
-  label: Published Server URL
-  default: ''
-- name: JELLYFIN_FFmpegPath
-  label: FFmpeg Path
-  default: ''
