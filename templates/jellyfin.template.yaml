@@ -19,12 +19,6 @@ volumes:
 - container: "/media"
   bind: "/mnt/wdc-500gb"
 env:
-- name: PUID
-  label: PUID
-  default: '1000'
-- name: PGID
-  label: PGID
-  default: '1000'
 - name: TZ
   label: Timezone
   default: 'Europe/Amsterdam'
@@ -34,9 +28,3 @@ env:
 - name: JELLYFIN_FFmpegPath
   label: FFmpeg Path
   default: ''
-- name: NVIDIA_VISIBLE_DEVICES
-  label: NVIDIA Visible Devices
-  default: 'all'
-- name: NVIDIA_DRIVER_CAPABILITIES
-  label: NVIDIA Driver Capabilities
-  default: 'all'
