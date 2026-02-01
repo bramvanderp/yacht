@@ -1,0 +1,20 @@
+type: 1
+title: Caddy (reverse proxy for Jellyfin)
+name: caddy-jellyfin
+description: Reverse proxy with automatic HTTPS (Let's Encrypt) for Jellyfin. Use host network so it can bind to 80/443 and reach Jellyfin on 127.0.0.1:8096. Add your domain in the Caddyfile and set Jellyfin Known Proxies to 127.0.0.1.
+logo: https://caddy.com/favicon.ico
+image: caddy:latest
+categories:
+- Networking
+platform: linux
+restart_policy: unless-stopped
+network_mode: host
+volumes:
+- container: "/etc/caddy"
+  bind: "/home/bram/.caddy"
+- container: "/data"
+  bind: "/home/bram/.caddy/data"
+env:
+- name: TZ
+  label: Timezone
+  default: 'Europe/Amsterdam'

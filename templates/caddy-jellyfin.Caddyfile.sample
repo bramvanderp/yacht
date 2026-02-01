@@ -1,0 +1,11 @@
+# Copy this file to your server as ~/.caddy/Caddyfile and replace jellyfin.example.com
+# with your real domain. Ensure the domain's A/AAAA record points to your server's public IP.
+#
+# Caddy will automatically:
+# - Obtain and renew a Let's Encrypt certificate
+# - Redirect HTTP to HTTPS
+# - Forward requests (including WebSockets) to Jellyfin
+
+jellyfin.example.com {
+	reverse_proxy 127.0.0.1:8096
+}
