@@ -6,6 +6,10 @@
 # - Redirect HTTP to HTTPS
 # - Forward requests (including WebSockets) to Jellyfin
 
-jellyfin.example.com {
+jellyfin.braaf.it {
+	reverse_proxy 127.0.0.1:8096
+}
+
+bram.duckdns.org {
 	reverse_proxy 127.0.0.1:8096
 }
