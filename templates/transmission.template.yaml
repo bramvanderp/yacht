@@ -35,7 +35,7 @@ env:
   default: 'PROTONVPN'
 - name: OPENVPN_CONFIG
   label: OPENVPN_CONFIG
-  default: 'jp.protonvpn.udp'
+  default: 'ru-33.protonvpn.udp'
 - name: OPENVPN_USERNAME
   label: OPENVPN_USERNAME
   default: '!openvpn_username'
