@@ -1,5 +1,19 @@
 # yacht
 
+## Server statistics (CPU, memory, disk)
+
+**Quick checks over SSH:**
+
+```bash
+htop          # CPU and memory (interactive; q to quit)
+free -h       # Memory summary
+df -h         # Disk space per filesystem
+```
+
+**Web dashboard:** Deploy the **Netdata** template (`templates/netdata.template.yaml`) in Yacht. Open `http://<server>:19999` for a real-time dashboard (CPU, memory, disk, network, Docker containers). Uses host network and read-only host mounts; no config required.
+
+---
+
 ## HTTPS for Jellyfin (remote access)
 
 To serve Jellyfin over HTTPS when running it via Yacht on a server, use a reverse proxy. Caddy is used here because it obtains and renews Let's Encrypt certificates automatically.

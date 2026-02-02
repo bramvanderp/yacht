@@ -1,0 +1,36 @@
+type: 1
+title: Netdata (server stats dashboard)
+name: netdata
+description: Real-time dashboard for CPU, memory, disk, network, and Docker containers. Open http://<server>:19999 after deployment.
+logo: https://netdata.cloud/favicon.ico
+image: netdata/netdata:stable
+categories:
+- Monitoring
+platform: linux
+restart_policy: unless-stopped
+network_mode: host
+pid: host
+cap_add:
+- SYS_PTRACE
+- SYS_ADMIN
+volumes:
+- container: "/host/proc"
+  bind: "/proc"
+- container: "/host/sys"
+  bind: "/sys"
+- container: "/var/run/docker.sock"
+  bind: "/var/run/docker.sock"
+- container: "/host/etc/passwd"
+  bind: "/etc/passwd"
+- container: "/host/etc/group"
+  bind: "/etc/group"
+env:
+- name: TZ
+  label: Timezone
+  default: 'Europe/Amsterdam'
+- name: NETDATA_CLAIM_TOKEN
+  label: Netdata Cloud token (optional)
+  default: ''
+- name: NETDATA_CLAIM_URL
+  label: Netdata Cloud URL (optional)
+  default: ''
