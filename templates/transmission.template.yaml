@@ -15,7 +15,7 @@ ports:
 network_mode: bridge
 volumes:
 - container: "/data"
-  bind: "/mnt/wdc-500gb"
+  bind: "/mnt/wd-red-6tb"
 - container: "/config"
   bind: "/home/bram/.transmission"
 cap_add:

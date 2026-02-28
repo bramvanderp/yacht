@@ -17,7 +17,7 @@ volumes:
 - container: "/cache"
   bind: "/home/bram/.jellyfin/cache"
 - container: "/media"
-  bind: "/mnt/wdc-500gb"
+  bind: "/mnt/wd-red-6tb"
 env:
 - name: TZ
   label: Timezone
