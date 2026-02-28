@@ -1,0 +1,32 @@
+type: 1
+title: Prowlarr
+name: prowlarr
+description: Indexer manager for the *arr stack
+logo: https://raw.githubusercontent.com/Prowlarr/Prowlarr/develop/Logo.png
+image: ghcr.io/hotio/prowlarr
+categories:
+- Media
+platform: linux
+restart_policy: unless-stopped
+ports:
+- 9696:9696/tcp
+network_mode: bridge
+volumes:
+- container: "/config"
+  bind: "/home/bram/.prowlarr"
+env:
+- name: PUID
+  label: PUID
+  default: '1000'
+- name: PGID
+  label: PGID
+  default: '1000'
+- name: UMASK
+  label: UMASK
+  default: '002'
+- name: TZ
+  label: Timezone
+  default: 'Etc/UTC'
+- name: WEBUI_PORTS
+  label: WEBUI_PORTS
+  default: '9696/tcp'
