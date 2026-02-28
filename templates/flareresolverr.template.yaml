@@ -1,0 +1,17 @@
+type: 1
+title: FlareSolverr
+name: flaresolverr
+description: Proxy server to bypass Cloudflare and other protections
+logo: https://raw.githubusercontent.com/FlareSolverr/FlareSolverr/master/flaresolverr_logo.png
+image: ghcr.io/flaresolverr/flaresolverr:latest
+categories:
+- Media
+platform: linux
+restart_policy: unless-stopped
+ports:
+- 8191:8191/tcp
+network_mode: bridge
+env:
+- name: LOG_LEVEL
+  label: LOG_LEVEL
+  default: 'info'
