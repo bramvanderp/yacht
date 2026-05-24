@@ -44,7 +44,7 @@ env:
   default: '!openvpn_password'
 - name: LOCAL_NETWORK
   label: LOCAL_NETWORK
-  default: '192.168.0.0/16'
+  default: '192.168.0.0/16,10.8.0.0/24'
 - name: DISABLE_PORT_FORWARDER
   label: DISABLE_PORT_FORWARDER
   default: 'false'
