@@ -22,3 +22,9 @@ env:
 - name: TZ
   label: Timezone
   default: 'Europe/Amsterdam'
+- name: NVIDIA_VISIBLE_DEVICES
+  label: NVIDIA Visible Devices
+  default: 'all'
+- name: NVIDIA_DRIVER_CAPABILITIES
+  label: NVIDIA Driver Capabilities
+  default: 'compute,video,utility'
