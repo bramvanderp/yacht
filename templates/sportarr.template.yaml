@@ -1,0 +1,31 @@
+type: 1
+title: Sportarr
+name: sportarr
+description: Sports PVR for the *arr stack (like Sonarr/Radarr, for sports events)
+logo: https://raw.githubusercontent.com/Sportarr/Sportarr/main/Logo/256.png
+image: sportarr/sportarr:latest
+categories:
+- Media
+platform: linux
+restart_policy: unless-stopped
+ports:
+- 1867:1867/tcp
+network_mode: bridge
+volumes:
+- container: "/config"
+  bind: "/home/bram/.sportarr"
+- container: "/data"
+  bind: "/mnt/wd-red-6tb"
+env:
+- name: PUID
+  label: PUID
+  default: '1000'
+- name: PGID
+  label: PGID
+  default: '1000'
+- name: UMASK
+  label: UMASK
+  default: '002'
+- name: TZ
+  label: Timezone
+  default: 'Europe/Amsterdam'
