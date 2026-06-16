@@ -45,6 +45,12 @@ env:
 - name: LOCAL_NETWORK
   label: LOCAL_NETWORK
   default: '192.168.0.0/16,10.8.0.0/24'
+- name: ENABLE_UFW
+  label: ENABLE_UFW
+  default: 'true'
+- name: UFW_ALLOW_GW_NET
+  label: UFW_ALLOW_GW_NET
+  default: 'true'
 - name: DISABLE_PORT_FORWARDER
   label: DISABLE_PORT_FORWARDER
   default: 'false'
