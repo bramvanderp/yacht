@@ -12,7 +12,7 @@ ports:
 - 9091:9091/tcp
 - 51413:51413/udp
 - 51413:51413/tcp
-network_mode: bridge
+network_mode: arrnet
 volumes:
 - container: "/data"
   bind: "/mnt/wd-red-6tb"
